@@ -11,7 +11,7 @@ import Foundation
 public enum SourceCodeTokenType {
 	case plain
 	case number
-	case string
+    case string
 	case identifier
 	case keyword
 	case comment
@@ -26,20 +26,20 @@ protocol SourceCodeToken: Token {
 
 extension SourceCodeToken {
 	
-	var isEditorPlaceholder: Bool {
+    public var isEditorPlaceholder: Bool {
 		return type == .editorPlaceholder
 	}
 	
-	var isPlain: Bool {
+    public var isPlain: Bool {
 		return type == .plain
 	}
 	
 }
 
-struct SimpleSourceCodeToken: SourceCodeToken {
-	
-	let type: SourceCodeTokenType
-	
-	let range: Range<String.Index>
-	
+public struct SimpleSourceCodeToken: SourceCodeToken {
+
+    public let type: SourceCodeTokenType
+
+    public let range: Range<String.Index>
+
 }
